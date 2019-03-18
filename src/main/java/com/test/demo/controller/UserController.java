@@ -22,4 +22,8 @@ public class UserController {
     public void addUser(User user){
         userService.addUser(user);
     }
+    @RequestMapping("/upUser")
+    public void upUser(User user){
+        userService.upUser(user);
+    }
 }

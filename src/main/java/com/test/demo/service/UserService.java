@@ -19,4 +19,12 @@ public class UserService {
     public int addUser(User user){
         return  userMapper.addUser(user);
     }
+    //修改
+    public int upUser(User user){
+        return  userMapper.upUser(user);
+    }
+    //删除
+    public int delUser(String userId){
+        return  userMapper.delUser(userId);
+    }
 }
