@@ -13,6 +13,8 @@ public interface UserMapper {
    int addUser(User user);
    //修改
    int upUser(User user);
+   //查询单个
+    User getUserInfo(String userId);
    //删除
     int delUser(String userId);
 }

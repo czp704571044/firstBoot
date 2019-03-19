@@ -26,4 +26,12 @@ public class UserController {
     public void upUser(User user){
         userService.upUser(user);
     }
+    @RequestMapping("/delUser")
+    public void delUser(String userId){
+        userService.delUser(userId);
+    }
+    @RequestMapping("/getUserInfo")
+    public User getUserInfo(String userId){
+        return userService.getUserInfo(userId);
+    }
 }

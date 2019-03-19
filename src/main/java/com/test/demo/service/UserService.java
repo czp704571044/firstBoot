@@ -23,6 +23,10 @@ public class UserService {
     public int upUser(User user){
         return  userMapper.upUser(user);
     }
+    //查询单个
+    public User getUserInfo(String userId){
+        return  userMapper.getUserInfo(userId);
+    }
     //删除
     public int delUser(String userId){
         return  userMapper.delUser(userId);
