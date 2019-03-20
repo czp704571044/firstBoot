@@ -6,7 +6,10 @@
       <el-table-column prop="userName" label="用户名"></el-table-column>
       <el-table-column prop="loginPassword" label="密码"></el-table-column>
       <el-table-column prop="userSex" label="性别"></el-table-column>
-
+      //操作
+       <el-table-column  label="操作"></el-table-column>
+      <router-link :to="{ path: 'add' }"><el-button type="text" size="small">新建</el-button></router-link>
+      <router-link :to="{ path: 'edit', query: {id: scope.row.id} }"><el-button type="text" size="small">编辑</el-button></router-link>
     </el-table>
   </div>
 </template>
