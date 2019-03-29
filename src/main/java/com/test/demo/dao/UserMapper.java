@@ -16,4 +16,6 @@ public interface UserMapper {
     User getUserInfo(String userId);
    //删除
     int delUser(String userId);
+    //登录
+
 }

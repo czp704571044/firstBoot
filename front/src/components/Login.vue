@@ -39,7 +39,7 @@
   },
       methods :{
          login(){
-           axios.get('http://localhost:8080/user/Login',{
+           axios.get('http://localhost:7070/user/Login',{
              params:{
                userName : this.user.userName,
                password : this.user.password,
