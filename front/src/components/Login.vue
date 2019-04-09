@@ -7,16 +7,13 @@
       </el-form-item>
 
         <el-form-item prop="password">
-          <el-input type="tetx" v-model="user.password" placeholder="密码"></el-input>
+          <el-input type="text" v-model="user.password" placeholder="密码"></el-input>
         </el-form-item>
 
-        <el-checkbox v-model="checked">记住密码</el-checkbox>
+        <el-checkbox  class="rememberme" >记住密码</el-checkbox>
 
         <el-form-item>
-          <el-button type="primary" @click="login();">登录</el-button>
-        </el-form-item>
-
-        <el-form-item>
+          <el-button type="primary" @click="login();" :loading="logining">登录</el-button>
           <el-button type="default" @click="register();">注册</el-button>
         </el-form-item>
       </el-form>
@@ -30,11 +27,16 @@
         name: "login",
         data(){
         return {
+          logining : false,
           user:{
             userName : '',
             password : '',
             checked : false,
-          }
+          },
+          rules:{
+            userName : [{require:true,message:'请输入用户名',trigger:'blur'}],
+            password : [{require:true,message:'请输入密码',trigger:'blur'}]
+          },
         }
   },
       methods :{
@@ -45,10 +47,13 @@
                password : this.user.password,
              }
            }).then(response => {
+             this .logging = true;
              if(response.data){
+               this .logging = false;
                sessionStorage.setItem('user',this.user.userName);
                this.$route.push({path : '/'});
              }else{
+               this .logging = false;
                alert("操作失败")
              }
            })
@@ -58,5 +63,8 @@
 </script>
 
 <style scoped>
-
+  .rememberme {
+    margin: 0px 0px 15px;
+    text-align: left;
+  }
 </style>
